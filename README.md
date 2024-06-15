@@ -1,23 +1,18 @@
-# AI-Secure Monitor
-
+<h1 align="center" id="title">Ai-Monitor</h1>
 <div align="center">
-    <img src="assets/xllogo.png" alt="AI-Secure Monitor Logo" width="300">
+    <img src="assets/xllogo.png" alt="AI-Secure Monitor Logo" width="200">
 </div>
+<p align="center"><img src="https://socialify.git.ci/CodeBerserkers888/Ai-Monitor/image?description=1&amp;descriptionEditable=%20AI-Secure%20Monitor%20your%20all-in-one%20solution%20for%20monitoring%20and%20securing%20your%20PC.%20&amp;font=Source%20Code%20Pro&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;theme=Auto" alt="project-image"></p>
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Flask](https://img.shields.io/badge/Flask-3.0-green)
-![OpenAI](https://img.shields.io/badge/OpenAI-API-yellow)
-![Pillow](https://img.shields.io/badge/Pillow-10.3-orange)
-![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.24.5-red)
-![License](https://img.shields.io/badge/License-MIT-brightgreen)
+<p id="description">Welcome to AI-Secure Monitor your all-in-one solution for monitoring and securing your PC. Harnessing the power of Artificial Intelligence AI-Secure Monitor offers robust protection against suspicious processes and vulnerabilities in PDFs and image files. With a sleek GUI and transparent operations it ensures that all security operations are conducted locally safeguarding your privacy.</p>
 
-## Introduction
+<p align="center"><img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="shields"><img src="https://img.shields.io/badge/Flask-3.0-green" alt="shields"><img src="https://img.shields.io/badge/OpenAI-API-yellow" alt="shields"><img src="https://img.shields.io/badge/Pillow-10.3-orange" alt="shields"><img src="https://img.shields.io/badge/PyMuPDF-1.24.5-red" alt="shields"><img src="https://img.shields.io/badge/License-MIT-brightgreen" alt="shields"></p>
 
-Welcome to **AI-Secure Monitor**, your all-in-one solution for monitoring and securing your PC. Harnessing the power of Artificial Intelligence, AI-Secure Monitor offers robust protection against suspicious processes, and vulnerabilities in PDFs and image files. With a sleek GUI and transparent operations, it ensures that all security operations are conducted locally, safeguarding your privacy.
+  
+  
+ ## Features
 
----
-
-## Features
+Here're some of the project's best features:
 
 - **Monitor Suspicious Processes:** Automatically detect and terminate suspicious processes, logging events and notifying the user.
 - **System Log Analysis:** Utilize OpenAI to analyze system logs for potential threats.
@@ -25,7 +20,6 @@ Welcome to **AI-Secure Monitor**, your all-in-one solution for monitoring and se
 - **Exploit Detection in PDFs and Images:** Upload files for analysis to detect known exploits and threats.
 - **User-Friendly GUI:** Interact with the application through a modern and intuitive graphical user interface.
 - **Transparent Operations:** All security tasks are performed locally without transmitting data to external servers.
-
 
 ## Requirements
 
@@ -38,10 +32,20 @@ Welcome to **AI-Secure Monitor**, your all-in-one solution for monitoring and se
 - Pillow
 - PyMuPDF
 
-## Installation
+<h2>🛠️ Installation Steps:</h2>
 
-1. Clone the repository:
+<p>1. Clone Repository</p>
 
-   ```bash
-   git clone https://github.com/CodeBerserkers888/AI-Secure-Monitor.git
-   cd AI-Secure-Monitor
+```
+git clone https://github.com/CodeBerserkers888/AI-Secure-Monitor.git cd AI-Secure-Monitor
+```
+
+<p>2. Install Requirements</p>
+
+```
+pip install -r requirements.txt
+```
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the MIT
