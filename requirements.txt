@@ -1,0 +1,7 @@
+psutil
+Flask
+requests
+openai
+python-dotenv
+Pillow
+PyMuPDF
