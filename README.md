@@ -1,8 +1,6 @@
 <h1 align="center" id="title">Ai-Monitor</h1>
-<div align="center">
-    <img src="assets/xllogo.png" alt="AI-Secure Monitor Logo" width="200">
-</div>
-<p align="center"><img src="https://socialify.git.ci/CodeBerserkers888/Ai-Monitor/image?description=1&amp;descriptionEditable=%20AI-Secure%20Monitor%20your%20all-in-one%20solution%20for%20monitoring%20and%20securing%20your%20PC.%20&amp;font=Source%20Code%20Pro&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;theme=Auto" alt="project-image"></p>
+
+<p align="center"><img src="https://socialify.git.ci/CodeBerserkers888/Ai-Monitor/image?description=1&descriptionEditable=%20AI-Secure%20Monitor%20your%20all-in-one%20solution%20for%20monitoring%20and%20securing%20your%20PC.%20&font=Source%20Code%20Pro&language=1&logo=https%3A%2F%2Fzapodaj.net%2Fimages%2F1cc1a25b0612b.png&name=1&owner=1&pattern=Circuit%20Board&theme=Dark"></p>
 
 <p id="description">Welcome to AI-Secure Monitor your all-in-one solution for monitoring and securing your PC. Harnessing the power of Artificial Intelligence AI-Secure Monitor offers robust protection against suspicious processes and vulnerabilities in PDFs and image files. With a sleek GUI and transparent operations it ensures that all security operations are conducted locally safeguarding your privacy.</p>
 
