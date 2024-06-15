@@ -1,6 +1,8 @@
 # AI-Secure Monitor
 
-![AI-Secure Monitor Logo](assets/xllogo.png)
+<div align="center">
+    <img src="assets/xllogo.png" alt="AI-Secure Monitor Logo" width="300">
+</div>
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-3.0-green)
