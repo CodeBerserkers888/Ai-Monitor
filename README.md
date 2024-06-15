@@ -9,7 +9,6 @@
 <p align="center"><img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="shields"><img src="https://img.shields.io/badge/Flask-3.0-green" alt="shields"><img src="https://img.shields.io/badge/OpenAI-API-yellow" alt="shields"><img src="https://img.shields.io/badge/Pillow-10.3-orange" alt="shields"><img src="https://img.shields.io/badge/PyMuPDF-1.24.5-red" alt="shields"><img src="https://img.shields.io/badge/License-MIT-brightgreen" alt="shields"></p>
 
   
-  
  ## Features
 
 Here're some of the project's best features:
@@ -32,6 +31,20 @@ Here're some of the project's best features:
 - Pillow
 - PyMuPDF
 
+## Project Structure 
+
+* AI-Monitor/
+* ├── LICENSE
+* ├── PRIVACY_POLICY.md
+* ├── README.md
+* ├── main.py
+* ├── email_notifier.py
+* ├── assets/
+* *    └ largelogo.png
+* ├── .env
+* └── requirements.txt
+
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Clone Repository</p>
@@ -45,7 +58,18 @@ git clone https://github.com/CodeBerserkers888/AI-Secure-Monitor.git cd AI-Secur
 ```
 pip install -r requirements.txt
 ```
+## Create a .env file and add your OpenAI API key:
 
-<h2>🛡️ License:</h2>
 
-This project is licensed under the MIT
+OPENAI_API_KEY=your_openai_api_key
+
+
+## Usage
+
+Run the application with the following command:
+
+```bash
+python3 main.py
+
+
+
