@@ -1,6 +1,13 @@
 # AI-Secure Monitor
 
-![AI-Secure Monitor Logo](assets/largelogo.png)
+![AI-Secure Monitor Logo](assets/large_logo.png)
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-3.0-green)
+![OpenAI](https://img.shields.io/badge/OpenAI-API-yellow)
+![Pillow](https://img.shields.io/badge/Pillow-10.3-orange)
+![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.24.5-red)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
 ## Introduction
 
@@ -17,14 +24,6 @@ Welcome to **AI-Secure Monitor**, your all-in-one solution for monitoring and se
 - **User-Friendly GUI:** Interact with the application through a modern and intuitive graphical user interface.
 - **Transparent Operations:** All security tasks are performed locally without transmitting data to external servers.
 
-## Badges
-
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Flask](https://img.shields.io/badge/Flask-3.0-green)
-![OpenAI](https://img.shields.io/badge/OpenAI-API-yellow)
-![Pillow](https://img.shields.io/badge/Pillow-10.3-orange)
-![PyMuPDF](https://img.shields.io/badge/PyMuPDF-1.24.5-red)
-![License](https://img.shields.io/badge/License-MIT-brightgreen)
 
 ## Requirements
 
