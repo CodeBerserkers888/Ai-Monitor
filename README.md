@@ -42,6 +42,13 @@ Here're some of the project's best features:
 * ├── .env
 * └── requirements.txt
 
+  ## Version Released
+| Source Code Released | v1.0.0 | Uploading Repository on GitHub                                                                                                        | ✅ |   |
+|----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------|----|---|
+| Win10/11 Update      | v1.5.0 | - Added batch script (`run.bat`) to automate setup and launch.  - Added new dialog windows for OpenAI API key and SMTP configuration. | ✅ |   |
+| v2.0.0               | v2.0.0 |                                                                🛠️                                                                     | ⚙️ |   |
+|                      |        |                                                                                                                                       |    |   |
+
 
 <h2>🛠️ Installation Steps:</h2>
 
@@ -68,6 +75,7 @@ Run the application with the following command:
 
 ```bash
 python3 main.py
+
 
 
 
