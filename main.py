@@ -8,10 +8,11 @@ import sqlite3
 import requests
 from threading import Thread
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import smtplib
 from dotenv import load_dotenv
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, simpledialog
 from PIL import Image, ImageTk
 import fitz  # PyMuPDF
 
@@ -19,8 +20,9 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# OpenAI API configuration
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Initialize global variables
+openai_api_key = None
+smtp_config = {}
 
 # List of suspicious processes to monitor
 suspicious_processes = ["powershell.exe", "ftp.exe"]
@@ -71,21 +73,27 @@ def send_logs(logs):
         analysis = response.json().get('analysis')
         print(f"Analysis: {analysis}")
         if "threat" in analysis.lower():
-            send_email("Security Threat Detected", analysis, "user@example.com")
+            send_email("Security Threat Detected", analysis, smtp_config["recipient_email"])
             messagebox.showwarning("Security Threat Detected", analysis)
     else:
         print("Error sending logs")
 
 def send_email(subject, body, to):
-    msg = MIMEText(body)
-    msg['Subject'] = subject
-    msg['From'] = 'your_email@example.com'
+    msg = MIMEMultipart()
+    msg['From'] = smtp_config["sender_email"]
     msg['To'] = to
+    msg['Subject'] = subject
 
-    with smtplib.SMTP('smtp.example.com', 587) as server:
-        server.starttls()
-        server.login('your_email@example.com', 'your_password')
-        server.sendmail('your_email@example.com', to, msg.as_string())
+    msg.attach(MIMEText(body, 'plain'))
+
+    try:
+        with smtplib.SMTP(smtp_config["smtp_server"], smtp_config["smtp_port"]) as server:
+            server.starttls()
+            server.login(smtp_config["sender_email"], smtp_config["sender_password"])
+            server.sendmail(smtp_config["sender_email"], to, msg.as_string())
+    except Exception as e:
+        print(f"Error sending email: {e}")
+        messagebox.showerror("Email Error", f"Failed to send email: {e}")
 
 @app.route('/analyze_log', methods=['POST'])
 def analyze_log():
@@ -132,7 +140,33 @@ def stop_monitoring_thread():
     monitor_thread.join()
 
 def start_gui():
+    global openai_api_key, smtp_config
+
+    def set_api_key():
+        global openai_api_key
+        openai_api_key = simpledialog.askstring("OpenAI API Key", "Enter your OpenAI API Key:", show='*')
+        if openai_api_key:
+            openai.api_key = openai_api_key
+            messagebox.showinfo("API Key Set", "OpenAI API Key has been set successfully.")
+        else:
+            messagebox.showerror("API Key Error", "OpenAI API Key is required to proceed.")
+
+    def set_smtp_config():
+        smtp_config["smtp_server"] = simpledialog.askstring("SMTP Server", "Enter your SMTP server:")
+        smtp_config["smtp_port"] = simpledialog.askinteger("SMTP Port", "Enter your SMTP port:")
+        smtp_config["sender_email"] = simpledialog.askstring("Sender Email", "Enter your email address:")
+        smtp_config["sender_password"] = simpledialog.askstring("Email Password", "Enter your email password:", show='*')
+        smtp_config["recipient_email"] = simpledialog.askstring("Recipient Email", "Enter the recipient email address:")
+
+        if all(smtp_config.values()):
+            messagebox.showinfo("SMTP Config Set", "SMTP configuration has been set successfully.")
+        else:
+            messagebox.showerror("SMTP Config Error", "All SMTP configuration fields are required to proceed.")
+
     def start_monitoring_callback():
+        if not openai_api_key:
+            messagebox.showerror("API Key Error", "Please set the OpenAI API Key before starting monitoring.")
+            return
         start_monitoring_thread()
         log_event("Started monitoring suspicious processes.")
         messagebox.showinfo("Monitoring", "Started monitoring suspicious processes.")
@@ -159,7 +193,13 @@ def start_gui():
 
     root = tk.Tk()
     root.title("Security Monitor")
-    root.geometry("300x300")
+    root.geometry("300x400")
+
+    set_api_key_button = tk.Button(root, text="Set OpenAI API Key", command=set_api_key, width=25)
+    set_api_key_button.pack(pady=10)
+
+    set_smtp_config_button = tk.Button(root, text="Set SMTP Config", command=set_smtp_config, width=25)
+    set_smtp_config_button.pack(pady=10)
 
     start_button = tk.Button(root, text="Start Monitoring", command=start_monitoring_callback, width=25)
     start_button.pack(pady=10)
@@ -174,7 +214,7 @@ def start_gui():
     file_button.pack(pady=10)
 
     # Adding the logo to the GUI
-    logo_path = "assets/logo.png"
+    logo_path = "assets/largelogo.png"
     if os.path.exists(logo_path):
         logo = Image.open(logo_path)
         logo = logo.resize((50, 50), Image.LANCZOS)
